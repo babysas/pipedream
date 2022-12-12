@@ -22,7 +22,7 @@ export default {
     },
     line_items: {
       type: "any",
-      description: "Line items of an estimate.",
+      description: "Line items of an estimate.Example: [{\"item_id\": \"333419000000053004\",\"quantity\": \"1\"}]",
       optional: true,
     },
     contact_persons: {
@@ -287,7 +287,7 @@ export default {
         invoiced_estimate_id: this.invoiced_estimate_id,
         salesperson_name: this.salesperson_name,
         custom_fields: this.custom_fields,
-        line_items: this.line_items,
+        line_items: JSON.parse(this.line_items),
         payment_options: this.payment_options,
         allow_partial_payments: this.allow_partial_payments,
         custom_body: this.custom_body,
